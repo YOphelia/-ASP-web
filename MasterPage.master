@@ -1,0 +1,354 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+        body{
+            background:rgb(234 232 235);
+        }
+       
+        .top-header-main{
+            color:black;
+        }
+        .top-header{
+            background: #12c2e9;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        }
+        .buttom-header{
+         background: #7f7fd5;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #91eae4, #86a8e7, #7f7fd5);  /* chrome 10-25, safari 5.1-6 */
+background: linear-gradient(to right, #91eae4, #86a8e7, #7f7fd5); /* w3c, ie 10+/ edge, firefox 16+, chrome 26+, opera 12+, safari 7+ */
+
+  
+        }
+       
+      .infor-left ul li a h6 {
+            color: #000;
+            font-size: 13px;
+            font-family: 'BreeSerif-Regular';
+            margin: 0 0 0 10px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+            .infor-left ul li a h6:hover {
+                color: rgb(239 84 111);
+            }
+
+        .infor-left ul li a p {
+            color:black;
+            font-size: 13px;
+            margin: 0;
+        }
+
+            .infor-left ul li a p:hover {
+                color: rgb(239 84 111);
+            }
+            .infor-left h4 {
+    color: #000;
+    font-size: 13px;
+    margin: 20px 0 0 0;
+}
+
+    .infor-left h4 span {
+        display: block;
+        margin: 7px 0;
+    }
+
+.infor-left h5 {
+    font-size: 15px;
+    color: #000;
+    margin: 19px 0 0 0;
+}
+
+.infor-left p a {
+    font-size: 13px;
+    color: #000;
+}
+
+    .infor-left p a:hover {
+        color: rgb(239 84 111);
+        text-decoration: none;
+    }
+
+          #float_left{
+    width: 40px;
+    height: 245px;
+    position: fixed;
+    top: 30%;
+    left: 42px;
+ 
+
+}
+/* #liss{
+    width: 42px;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    border: 1px solid rgb(124, 124, 124); 
+    border-radius: 15px;
+    background-color: rgb(151, 220, 247);
+} */
+
+#float_left ul li{
+    list-style: none;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    margin: 0;
+    background-repeat: no-repeat;
+    border-bottom: 1px solid white;
+    cursor: pointer;
+    transition: all 0.5s ease; 
+}
+#float_left ul li:hover{
+    transform: scale(1.2);
+}
+#float_left .li1{
+    background-image: url(imges/店铺.png);
+    
+}
+#float_left .li2{
+    background-image: url(imges/意见反馈.png);
+    
+}
+#float_left .li3{
+    background-image: url(imges/喜欢.png);
+}
+#float_left .li4{
+      background-image: url(imges/客服.png);
+   
+}
+#float_left .li5 {
+    background-image: url(imges/问题.png);
+    
+}
+#float_left .li6{
+   
+    background-image: url(imges/返回顶部.png);
+   
+} 
+#float_left .div1{
+    width: 0px;    /* 先让div的width为0，隐藏起来*/
+    height: 30px;
+    text-align: center;
+
+    background-color: #F6A702;
+    margin-left: 40px;
+    overflow: hidden;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+}
+#float_left ul li:hover .div1{
+    width: 80px;           /* 给div加上宽度，让其显示出来*/
+    border-radius: 15px;
+    transition: all 1s ease-in-out;/* 设置改变的标签类型、时间、速度曲线*/
+}
+
+    </style>
+</head>
+<body>
+     <form id="form1" runat="server">
+          <%-- 头部导航栏栏--%>
+     
+    <div class="top-header">
+        <div class="container">
+            <div class="top-header-main">
+                <div class="col-md-6 top-header-left">
+                    <div class="drop">
+                        <ul>
+                            <li class="label"><a href="index.aspx">首页</a></li>
+                            <li class="label"><a href="<%=btnurl %>">
+                                <%=btn %></a></li>
+                            <li class="label"><a href="userReg.aspx">注册</a></li>
+                            <li class="label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=tip %></li>
+                        </ul>
+                        <div class="clearfix">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 top-header-left">
+                    <div class="cart box_1">
+                        <table class="style1">
+                            <tr>
+                                <td>
+                                    <a href="orders.aspx">
+                                        <div class="total">
+                                            <%--<span class="simpleCart_total"></span>--%>
+                                        </div>
+                                        <img src="images/ic_list.png" alt="" height="18" width="24" />
+                                    </a>
+                                    <p>
+                                        <a href="orders.aspx" class="simpleCart_empty">我的订单</a></p>
+                                </td>
+                                <td>
+                                    <a href="check.aspx">
+                                        <div class="total">
+                                            <%--<span class="simpleCart_total"></span>--%>
+                                        </div>
+                                        <img src="images/cart-1.png" alt="" />
+                                    </a>
+                                    <p>
+                                        <a href="check.aspx" class="simpleCart_empty">购物车</a></p>
+                                    <div class="clearfix">
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="clearfix">
+                </div>
+            </div>
+        </div>
+    </div>
+    <%-- 头部导航栏栏--%>
+
+        <%-- 侧边滚动栏--%>
+        <div id="float_left">
+            <ul>
+                <div id="liss" >
+                <li class="li1"></li>
+                <li class="li2"><div class="div1">意见反馈</div></li>
+                <li class="li3"><div class="div1">猜你喜欢</div></li>
+                <li class="li4"><div class="div1">QQ客服</div></li>
+                <li class="li5"><div class="div1">常见问题</div></li>
+                <li class="li6" id="top"><a href="#liss"></a><div class="div1">回顶部</div> </li>
+            </div>
+            </ul>
+        </div>  
+         <script>
+             top.onclick = function () {     <%-- 回顶功能实现--%>
+                 scrollTo(0, 0);
+             }
+         </script>
+          <%-- 侧边滚动栏--%>
+         <%--子模版插入位置--%>
+    <div class="container">        
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">   
+    </asp:ContentPlaceHolder>
+     </div>
+         <%--子模版插入位置--%>
+
+        <br />
+        <br />
+          <%--底部信息模块--%>
+         <div class="buttom-header">
+             <br />
+        
+    <!--information-starts-->
+    <div class="information">
+        
+            <div class="infor-top">
+                <div class="col-md-3 infor-left">
+                    <h3>
+                        关注我们</h3>
+                    <ul>
+                        <li><a href="#"><span class="fb"></span>
+                            <h6>
+                                Facebook</h6>
+                        </a></li>
+                        <li><a href="#"><span class="twit"></span>
+                            <h6>
+                                Twitter</h6>
+                        </a></li>
+                        <li><a href="#"><span class="google"></span>
+                            <h6>
+                                Google+</h6>
+                        </a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 infor-left">
+                    <h3>
+                        相关推荐</h3>
+                    <ul>
+                        <li><a target="_blank" href="http://www.quwan.com/" style="color:red;">
+                            <p>
+                                趣玩网</p>
+                        </a></li>
+                        <li><a target="_blank" href="http://www.jd.com/">
+                            <p>
+                                京东商城</p>
+                        </a></li>
+                        <li><a target="_blank" href="http://www.wowsai.com/">
+                            <p>
+                                哇噻网</p>
+                        </a></li>
+                        <li><a target="_blank" href="http://www.liveport.cn/">
+                            <p>
+                                优集品</p>
+                        </a></li>
+                        <li><a target="_blank" href="http://www.zeepin.com/">
+                            <p>
+                                智品网</p>
+                        </a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 infor-left">
+                    <h3>
+                        账户信息</h3>
+                    <ul>
+                        <li><a href="Change.aspx">
+                            <p>
+                                修改用户资料</p>
+                        </a></li>
+                        <li><a href="orders.aspx">
+                            <p>
+                                我的订单</p>
+                        </a></li>
+                        <li><a href="#">
+                            <p>
+                                客户服务</p>
+                        </a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 infor-left">
+                    <h3>
+                        本店信息</h3>
+                    <h4>
+                        淘奇网, <span>肇庆市端州区,</span> 黄冈街道.</h4>
+                    <h5>
+                        138xxxxx138</h5>
+                    <p>
+                        <a href="mailto:1427963851@qq.com">1427963851@qq.com</a></p>
+                </div>
+                <div class="clearfix">
+                </div>
+            </div>
+        
+    </div>
+    <!--information-end-->
+    <!--footer-starts-->
+    <div class="footer">
+        
+            <div class="footer-top">
+                <div class="col-md-6 footer-left">
+                </div>
+                <div class="col-md-6 footer-right">
+                    <p>
+                        Copyright &copy; 2021.Company name All rights reserved.淘奇网</p>
+                </div>
+                <div class="clearfix">
+                </div>
+            </div>
+      
+    </div>
+        
+    <!--footer-end-->
+              </div>  
+          <%--底部信息模块--%>
+    </form>
+   
+  
+</body>
+</html>
